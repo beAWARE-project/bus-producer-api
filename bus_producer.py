@@ -7,17 +7,7 @@ class BusProducer:
     def __init__(self):
 
         # Pre-shared credentials
-        self.credentials = {
-            "api_key": "BPWTh17zQ2kDvxuvmSoHqZEHEbbu6izktAHKC8aD2EGDVNeO",
-            "kafka_admin_url": "https://kafka-admin-prod02.messagehub.services.eu-gb.bluemix.net:443",
-            "kafka_brokers_sasl": [
-                "kafka03-prod02.messagehub.services.eu-gb.bluemix.net:9093",
-                "kafka02-prod02.messagehub.services.eu-gb.bluemix.net:9093",
-                "kafka04-prod02.messagehub.services.eu-gb.bluemix.net:9093",
-                "kafka05-prod02.messagehub.services.eu-gb.bluemix.net:9093",
-                "kafka01-prod02.messagehub.services.eu-gb.bluemix.net:9093"
-            ]
-        }
+        self.credentials = json.load(open('bus_credentials.json'))
 
         # Construct required configuration
         self.configuration = {
